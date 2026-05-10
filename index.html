@@ -2,21 +2,27 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Bild zu Schematic</title>
+    <title>Map Schematic Generator</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: #222; color: white; }
-        #preview { border: 2px solid #555; margin-top: 20px; image-rendering: pixelated; width: 512px; }
-        .controls { background: #333; padding: 20px; border-radius: 8px; display: inline-block; }
+        body { font-family: sans-serif; background: #1a1a1a; color: white; text-align: center; }
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(5, 128px); /* 5 Spalten wie im Bild */
+            gap: 2px; 
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        canvas { border: 1px solid #444; width: 128px; height: 128px; }
+        .controls { padding: 20px; background: #333; }
     </style>
 </head>
 <body>
-    <h1>Bild zu Schematic Konverter</h1>
+    <h1>Map Grid Generator</h1>
     <div class="controls">
-        <input type="file" id="upload" accept="image/*"><br><br>
-        <label>Größe: <input type="number" id="size" value="128"> px</label><br><br>
-        <button id="download">Schematic generieren</button>
-    </div><br>
-    <canvas id="preview"></canvas>
+        <input type="file" id="upload" accept="image/*">
+        <p>Das Bild wird automatisch in 128x128 Blöcke unterteilt.</p>
+    </div>
+    <div id="outputGrid" class="grid-container"></div>
 
     <script src="script.js"></script>
 </body>
