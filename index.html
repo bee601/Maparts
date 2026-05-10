@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Bild zu Schematic</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #222; color: white; }
+        #preview { border: 2px solid #555; margin-top: 20px; image-rendering: pixelated; width: 512px; }
+        .controls { background: #333; padding: 20px; border-radius: 8px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Bild zu Schematic Konverter</h1>
+    <div class="controls">
+        <input type="file" id="upload" accept="image/*"><br><br>
+        <label>Größe: <input type="number" id="size" value="128"> px</label><br><br>
+        <button id="download">Schematic generieren</button>
+    </div><br>
+    <canvas id="preview"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
